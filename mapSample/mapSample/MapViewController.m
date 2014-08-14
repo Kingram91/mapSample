@@ -45,9 +45,7 @@
     
     UIBarButtonItem *mapTypeButton = [[UIBarButtonItem alloc]initWithTitle:@"Type" style:UIBarButtonItemStylePlain target:self action:@selector(changeMapType)];
     
-    UIBarButtonItem *detailsButton = [[UIBarButtonItem alloc]initWithTitle:@"Details" style:UIBarButtonItemStylePlain target:self action:@selector(detailsBtnClick)];
-    
-    [_mapToolbar setItems:[NSArray arrayWithObjects:trackingButton,zoomButton,mapTypeButton,detailsButton, nil]animated:YES];
+    [_mapToolbar setItems:[NSArray arrayWithObjects:trackingButton,zoomButton,mapTypeButton, nil]animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,9 +67,7 @@
         _mapView.mapType = MKMapTypeStandard;
 }
 
-- (void)detailsBtnClick{
-    [self performSegueWithIdentifier:@"PushToResults" sender:self];
-}
+
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:
 (MKUserLocation *)userLocation
@@ -114,6 +110,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     ResultsTableViewController *destination = [segue destinationViewController];
-    destination.mapItems = _matchingItems; }
+    destination.mapItems = _matchingItems;
+}
 
 @end

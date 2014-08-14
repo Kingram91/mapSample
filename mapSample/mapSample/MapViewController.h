@@ -21,9 +21,5 @@
 @property (strong, nonatomic) MKUserLocation *userLocation;
 - (void)zoomIn;
 - (void)changeMapType;
-- (void)detailsBtnClick;
 - (IBAction)textFieldReturn:(id)sender;
-
-
-
 @end
