@@ -55,7 +55,7 @@
 }
 
 - (void)zoomIn {
-    _region = MKCoordinateRegionMakeWithDistance ( _userLocation.location.coordinate, 20000, 20000);
+    _region = MKCoordinateRegionMakeWithDistance ( _userLocation.location.coordinate, 1000, 1000);
     [_mapView setRegion:self.region animated:NO];
 }
 
