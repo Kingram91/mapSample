@@ -11,7 +11,17 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ResultsTableViewController.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate>
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+{
+    CLLocationManager *locationManager;
+    
+    CLLocationCoordinate2D currentCentre;
+    int currenDist;
+    int zoomCount;
+    BOOL firstLaunch;
+    UIBarButtonItem *zoomButton;
+    UIBarButtonItem *mapTypeButton;
+}
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UITextField *searchText;
